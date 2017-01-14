@@ -10,7 +10,7 @@ helloWorldControllers.controller(
 		'$location', 
 		'$http', 
 		function MainCtrl($scope, $location, $http) {
-			$scope.message = "Hello World";
+			$scope.message = "World";
 		}
 	]
 );
@@ -22,7 +22,7 @@ helloWorldControllers.controller(
 		'$location', 
 		'$http', 
 		function ShowCtrl($scope, $location, $http) {
-			$scope.message = "Hello World";
+			$scope.message = "World";
 		}
 	]
 );
