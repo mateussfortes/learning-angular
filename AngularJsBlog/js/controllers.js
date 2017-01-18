@@ -7,26 +7,25 @@ blogControllers.controller(
 	'BlogCtrl', 
 	[
 		'$scope', 
-		function BlogCtrl($scope)
+		'BlogList',
+		function BlogCtrl($scope, BlogList)
 		{
-			$scope.blogList = [
-				{
-					"_id": 2,
-					"date": 1400623623107,
-					"introText": "Este é um blog sobre AngularJS. Nós iremos mostrar como construir",
-					"blogText": "Este é um blog sobre ANgularJS. Nós iremos mostrar como construir um blog e como adicionar comentarios em cada post."
-				},{
-					"_id": 2,
-					"date": 1400623623107,
-					"introText": "Este é um blog sobre AngularJS. Nós iremos mostrar como construir",
-					"blogText": "Este é um blog sobre ANgularJS. Nós iremos mostrar como construir um blog e como adicionar comentarios em cada post."
+			BlogList.get(
+				{},
+				function success(response) {
+					console.log("Success"+JSON.stringfy(response));
+					$scope.blogList = response;
+				},
+				function error(errorResponse) {
+					console.log("Error:"+JSON.stringfy(errorResponse));
 				}
-			];
+			);
 
 		}
 	]
 );
 
+/*REST PARA NOTICIA INTERNA NÃO ATUALIZADO*/
 blogControllers.controller(
 	'BlogViewCtrl', 
 	[
